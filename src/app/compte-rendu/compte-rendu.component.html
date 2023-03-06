@@ -1,0 +1,129 @@
+
+
+<img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 200%;">
+<img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 200%;">
+    <div class="container">
+        
+        <!-- <img src="assets/img/bk.jpeg" alt="" style="width: 30%;margin-top: 10%;margin-left: 30%;" > -->
+        <!-- @if ($enregistrement === 1) -->
+        <!-- <span class="enregistrement-reusie" style="font-weight: bold;color: darkgreen;">Enregistrement reusie</span> -->
+        <!-- @endif -->
+        <!-- @if ($enregistrement === 2) -->
+        <!-- <span class="enregistrement-reusie" style="font-weight: bold;color: darkred;">Veillez remplir tous les champs</span> -->
+        <!-- @endif -->
+        <form (ngSubmit)="onSubmit()">
+            <a href="patients"  style="width: 20%;text-decoration: none;color: green;margin-left: 50%;"><img src="assets/img/fleche.jpeg" alt="" style="width: 10%;">
+                retour</a><br>
+            <h1 class="entreprise">COMPTE RENDU DE CONTROLE PACEMAKER</h1>
+            <input type="hidden" name="id" value="">
+            <div class="nom">
+                <label for="nom">Nom</label>
+                <input type="text" name="nom" id="nom" [(ngModel)]="compteRendu.nom" >
+            </div>
+            <div class="Prenom">
+                <label for="prenom">Prénoms</label>
+                <input type="text" name="prenom" id="prenom" [(ngModel)]="compteRendu.prenom">
+            </div>
+            <div class="Age">
+                <label for="age">age</label>
+                <input type="number" name="age" id="age" [(ngModel)]="compteRendu.age">
+            </div>
+            <div class="realise">
+                <label for="realise">Réalisé le</label>
+                <input type="date" name="dateconsultation" id="realise" [(ngModel)]="compteRendu.dateconsultation">
+            </div>
+           
+                <div class="site">
+                <label for="site">Constantes:</label>
+                <input type="number" name="constantes" id="constantes" [(ngModel)]="compteRendu.constantes">
+            </div>
+            <div class="marque">
+                <label for="superficie" style="width:900px;">Marque du stimulateur</label>
+                <input type="text" name="marquestimulateur" id="marque" [(ngModel)]="compteRendu.marquestimulateur">
+            </div>
+            <div class="mode">
+                <label for="mode" style="width:900px;">Mode de stimulation</label>
+                <input type="text" name="modedestimulateur" id="mode" [(ngModel)]="compteRendu.modedestimulateur">
+            </div>
+            <div class="impedancePile">
+                <label for="impedancePile" style="width:900px;">Impédance de la pile</label>
+                <input type="text" name="impedancepile" id="impedancePile" [(ngModel)]="compteRendu.impedancepile">
+            </div>
+            <div class="tension">
+                <label for="tension" style="width:900px;">tension aux bornes de la pile</label>
+                <input type="text" name="tensionbornepile" id="tension" [(ngModel)]="compteRendu.tensionbornepile">
+            </div>
+            <div class="ERI">
+                <label for="ERI" style="width:900px;">ERI(durée de vie)</label>
+                <input type="number" name="erduree" id="ERI" [(ngModel)]="compteRendu.erduree">
+            </div>
+            <div class="row">
+                <div class="col-md-" style="margin-right: 10px;">
+                    <p> Impédance des sondes:</p>
+                </div>
+                <div class="col-md-6" style="margin-left: 350px">
+                    <p>Seuils de stimulation:</p>
+                </div>
+            </div><br>
+            <div class="Auriculaires">
+                <label for="Auriculaires">.Auriculaires =</label>
+                <input type="text" name="Auriculaires" id="Auriculaires" [(ngModel)]="compteRendu.impedanceauricullaire">
+            </div>
+            <div class="Auriculaires">
+                <label for="Auriculaires">.Auriculaires =</label>
+                <input type="text" name="Auriculaires" id="Auriculaires" [(ngModel)]="compteRendu.seuilstimulationauricullaire">
+            </div>
+            <div class="Venticulaires">
+                <label for="Venticulaires">.Venticulaires =</label>
+                <input type="text" name="Venticulaires" id="Venticulaires" [(ngModel)]="compteRendu.impedanceventriculaire">
+            </div>
+            <div class="Venticulaires">
+                <label for="Venticulaires">.Venticulaires =</label>
+                <input type="text" name="Venticulaires" id="Venticulaires" [(ngModel)]="compteRendu.seuilstimulationventriculaire">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6" style="margin-left: 10px;width: 100%;">
+                    <p> Détection:</p>
+                </div>
+                <div class="col-md-6" style="margin-left: 350px">
+                    <p>pourcentages de stimulation:</p>
+                </div>
+              
+            </div><br>
+            <div class="Auriculaires">
+                <label for="Auriculaires">.Auriculaires =</label>
+                <input type="text" name="Auriculaires" id="Auriculaires" [(ngModel)]="compteRendu.seuildetectionauricullaire">
+            </div>
+            <div class="Auriculaires">
+                <label for="Auriculaires">.Auriculaires =</label>
+                <input type="number" name="Auriculaires" id="Auriculaires" [(ngModel)]="compteRendu.pourcentagestimulationauriculaire">
+            </div>
+            <div class="Venticulaires">
+                <label for="Venticulaires">.Venticulaires =</label>
+                <input type="text" name="Venticulaires" id="Venticulaires" [(ngModel)]="compteRendu.seuildetectionventriculaire">
+            </div>
+            <div class="Venticulaires">
+                <label for="Venticulaires">.Venticulaires =</label>
+                <input type="number" name="Venticulaires" id="Venticulaires" [(ngModel)]="compteRendu.pourcentagestimulationventriculaire">
+            </div>
+            <div class="row">
+                <!-- <div class="col-md-" style="margin-right: 10px;">
+                    <p> Evenements:</p> -->
+                    <div class="impedancePile">
+                        <label for="evenement" style="width:900px;"> Évenements</label>
+                        <input type="text" name="evenement" id="evenement" [(ngModel)]="compteRendu.evenement">
+                    </div>
+                <!-- </div> -->
+                <div class="col-md-6" style="margin-left: 100px;width: 200%;">
+                    <p>Autres</p>
+                </div>
+            </div><br>
+
+            <input class="enregistrer" type="submit" value="Enregistrer">
+        </form>
+        <div class="etats">
+            <a class="recettes-mensuelles" href="">listes compte rendu</a>
+            <a (click)="deconnexion" class="deconnexion" href="">Déconnexion</a>
+        </div>
+    </div>

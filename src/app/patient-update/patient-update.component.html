@@ -1,0 +1,56 @@
+<img src="assets/img/font.jpeg" alt="" style="width: 100%;">
+<div class="container">
+<div class="row">
+    <!-- <div class="card col-md-6 offset-md-3 offset-md-3"> -->
+        <div class="row">
+            <a href="patients"  style="width: 20%;text-decoration: none;color: green;"><img src="assets/img/fleche.jpeg" alt="" style="width: 10%;">
+                retour</a><br>
+            <h3 class="text-center"> Update patient </h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label> nom</label>
+                        <input type="text" class="form-control" id="firstName" [(ngModel)]="employee.nom"
+                            name="nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label> prenom</label>
+                        <input type="text" class="form-control" id="lastName" [(ngModel)]="employee.prenom"
+                            name="prenom">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Email </label>
+                        <input type="text" class="form-control" id="emailId" [(ngModel)]="employee.email"
+                            name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Adresse </label>
+                        <input type="text" class="form-control" id="emailId" [(ngModel)]="employee.adresse"
+                            name="adresse">
+                    </div>
+                    <div class="form-group">
+                        <label> Age </label>
+                        <input type="number" class="form-control" id="age" [(ngModel)]="employee.age"
+                            name="age">
+                    </div>
+                    <div class="form-group">
+                        <label> téléphone </label>
+                        <input type="text" class="form-control" id="numeroTelephone" [(ngModel)]="employee.numeroTelephone"
+                            name="numeroTelephone">
+                    </div>
+                    <div class="form-group">
+                        
+                    </div>
+                    <br />
+                    <button class="btn btn-success" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

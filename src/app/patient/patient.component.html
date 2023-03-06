@@ -1,0 +1,150 @@
+
+<img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 150%;">
+<img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 150%;">
+
+<div class = "container">
+<div class="row">
+    <!-- <div class="card col-md-6 offset-md-3 offset-md-3"> -->
+        <div class="row">
+            <a href="GestionComponent"  style="width: 20%;margin-left: 70%;text-decoration: none;color: green;"><img src="assets/img/fleche.jpeg" alt="" style="width: 10%;">
+                accueil</a>
+
+            <h3 class="text-center"> Information concernant le patient </h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+<h4><b style="margin-left: 5%;">Compte rendu opératoire </b></h4>
+<h6><b> </b></h6>
+
+<!-- <p></p> -->
+
+                    <div class="form-group">
+                        <label> Nom</label>
+                        <input type="text" class="form-control" id="nom" [(ngModel)]="patients.nom"
+                            name="nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label> Prenom</label>
+                        <input type="text" class="form-control" id="prenom" [(ngModel)]="patients.prenom"
+                            name="prenom" required> 
+                    </div>
+
+                    <div class="form-group">
+                        <label> Email </label>
+                        <input type="text" class="form-control" id="email" [(ngModel)]="patients.email"
+                            name="email">
+                    </div>
+                    <div class="form-group">
+                        <label> Adresse</label>
+                        <input type="text" class="form-control" id="prenom" [(ngModel)]="patients.adresse"
+                            name="adresse">
+                    </div>
+
+                    <div class="form-group">
+                        <label> téléphone </label>
+                        <input type="text" class="form-control" id="numeroTelephone" [(ngModel)]="patients.numeroTelephone"
+                            name="numeroTelephone">
+                    </div>
+                    <div class="form-group">
+                        <label> age </label>
+                        <input type="text" class="form-control" id="numeroTelephone" [(ngModel)]="patients.age"
+                            name="age">
+                    </div>
+                    <div class="form-group">
+                        <label> login </label>
+                        <input type="text" class="form-control" id="login" [(ngModel)]="patients.login"
+                            name="login">
+                    </div>
+                    <div class="form-group">
+                        <label> pays d'implantation </label>
+                        <input type="text" class="form-control" id="paysImplantation" [(ngModel)]="patients.paysImplantation"
+                            name="paysImplantation">
+                    </div>
+                    <div class="form-group">
+                        <label> Date d'implantation </label>
+                        <input type="date" class="form-control" id="dateImplantation" [(ngModel)]="patients.dateImplantation"
+                            name="dateImplantation">
+                    </div>
+                    <div class="form-group">
+                        <label> centre d'implantation </label>
+                        <input type="text" class="form-control" id="centreImplantation" [(ngModel)]="patients.centreImplantation"
+                            name="centreImplantation">
+                    </div>
+                    <div class="form-group">
+                        <label> Nom opérateur </label>
+                        <input type="text" class="form-control" id="nomOperateur" [(ngModel)]="patients.nomOperateur"
+                            name="nomOperateur">
+                    </div>
+                    <div class="form-group">
+                        <label> Nom éqiupe </label>
+                        <input type="text" class="form-control" id="nomEquipe" [(ngModel)]="patients.nomEquipe"
+                            name="nomEquipe">
+                    </div>
+                    <div class="form-group">
+                        <label> Indication de l'implantation</label>
+                        <input type="text" class="form-control" id="indicationImplantation" [(ngModel)]="patients.indicationImplantation"
+                            name="indicationImplantation">
+                    </div>
+                    <h6><b> </b></h6>
+                    <h4><b style="margin-left: 5%;">Technique </b></h4>
+                    <h6><b> </b></h6>
+                    
+
+                    <div class="form-group">
+                        <label> Préparation du malade </label>
+                        <input type="text" class="form-control" id="preparationMalade" [(ngModel)]="patients.preparationMalade"
+                            name="preparationMalade">
+                    </div>
+                    <div class="form-group">
+                        <label> voir d'abord </label>
+                        <input type="text" class="form-control" id="voirDabord" [(ngModel)]="patients.voirDabord"
+                            name="voirDabord">
+                    </div>
+                    <div class="form-group">
+                        <label> mise en place des ondes</label>
+                        <input type="text" class="form-control" id="miseEnPlaceOnde" [(ngModel)]="patients.miseEnPlaceOnde"
+                            name="miseEnPlaceOnde">
+                    </div>
+                    <div class="form-group">
+                        <label> mesure Paire Operatoire</label>
+                        <input type="text" class="form-control" id="mesurePaireOperatoire" [(ngModel)]="patients.mesurePaireOperatoire"
+                            name="mesurePaireOperatoire">
+                    </div>
+                    <div class="form-group">
+                        <label> boitier</label>
+                        <input type="text" class="form-control" id="boitier" [(ngModel)]="patients.boitier"
+                            name="boitier">
+                    </div>
+                    <div class="form-group">
+                        <label> loge</label>
+                        <input type="text" class="form-control" id="loge" [(ngModel)]="patients.loge"
+                            name="loge">
+                    </div>
+                  
+                    <div class="form-group">
+                        <label> incident/accident</label>
+                        <input type="text" class="form-control" id="incidendtAccident" [(ngModel)]="patients.incidendtAccident"
+                            name="incidendtAccident">
+                    </div>
+                    <div class="form-group">
+                        <label> stimulateurTemporel</label>
+                        <input type="text" class="form-control" id="stimulateurTemporel" [(ngModel)]="patients.stimulateurTemporel"
+                            name="stimulateurTemporel">
+                    </div>
+                    <br />
+
+                    <!-- <h6><b style="margin-left: 95%;">Information </b></h6>
+                    <h6><b> du pacemaker</b></h6>
+                    <h6><b style="margin-left: 104%;">rapport </b></h6>
+                    <h6><b> opératoire</b></h6> -->
+                    <button class="btn btn-success" type="submit">Submit</button>
+                    <!-- <a href="CompteRenduComponent" class="btn btn-primary" type="submit">compte rendu</a> -->
+
+
+                </form>
+            </div>
+        </div>
+    <!-- </div> -->
+</div>
+</div>

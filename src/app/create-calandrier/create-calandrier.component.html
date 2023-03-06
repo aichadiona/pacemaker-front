@@ -1,0 +1,36 @@
+
+    <img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 200%;">
+    <!-- <img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 200%;">
+    <img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 200%;"> -->
+    <div class="container">
+        <a href="GestionComponent"  style="width: 20%;text-decoration: none;color: green;"><img src="assets/img/fleche.jpeg" alt="" style="width: 10%;">
+            accueil</a>
+    
+        <div>
+            <div class="row">
+        
+                <ejs-schedule #schedule width="100%" height="500px"  #ejCalendar [eventSettings]='{ dataSource: calendarEvents, fields: eventFields }'>
+                </ejs-schedule>
+                  <form (ngSubmit)="addEvent()" style="margin-bottom: 50px;">
+                    <div>
+                      <label for="subject">Subject:</label>
+                      <input type="text" id="subject" name="subject" [(ngModel)]="newEvent.subject">
+                    </div>
+                    <div>
+                      <label for="description">Description:</label>
+                      <textarea id="description" name="description" [(ngModel)]="newEvent.description"></textarea>
+                    </div>
+                    <div>
+                      <label for="start-time">Start Time:</label>
+                      <input type="datetime-local" id="start-time" name="startTime" [(ngModel)]="newEvent.startTime">
+                    </div>
+                    <div>
+                      <label for="end-time">End Time:</label>
+                      <input type="datetime-local" id="end-time" name="endTime" [(ngModel)]="newEvent.endTime">
+                    </div>
+                    <button type="submit" class="btn btn-success" style="margin-bottom: 60px;">Add Event</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+    

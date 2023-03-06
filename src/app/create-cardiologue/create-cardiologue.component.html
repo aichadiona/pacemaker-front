@@ -1,0 +1,69 @@
+    <img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 200%;">
+<div class="container">
+
+    <div>
+        <div class="row">
+            <h3 class="text-center"> Create Cardiologue </h3>
+            <hr />
+            <div class="card-body">
+                <form #Registerform="ngForm" (ngSubmit)="onSubmit()">
+                    <small class="text-danger">{{msg}}</small>
+                    <p></p>
+                    <!-- <small [class.tetxt.danger]="msg.status==500">{{msg.message}}</small> -->
+                    <div class="form-group">
+                        <label>Prenom</label>
+                        <input type="text" class="form-control" id="prenom" [(ngModel)]="cardialogue.prenom"
+                            name="prenom" required>
+                            <!-- <small class="text-danger">{{message}}</small> -->
+                    </div>
+
+                    <div class="form-group">
+                        <label> Nom</label>
+                        <input type="text" class="form-control" id="nom" [(ngModel)]="cardialogue.nom"
+                        required name="nom">
+                    </div>
+
+                 
+                    <div class="form-group">
+                        <label> Email </label>
+                        <input type="text" class="form-control" id="email" [(ngModel)]="cardialogue.email"
+                        required name="email">
+                    </div>
+                    <div class="form-group">
+                        <label> téléphone </label>
+                        <input type="text" class="form-control" id="telephone" [(ngModel)]="cardialogue.telephone"
+                        required name="email">
+                    </div>
+                    <div class="form-group">
+                        <label> Adresse </label>
+                        <input type="text" class="form-control" id="adresse" [(ngModel)]="cardialogue.adresse"
+                        required  name="adresse">
+                    </div>
+                    <div class="form-group">
+                        <label> login </label>
+                        <input type="text" class="form-control" id="login" [(ngModel)]="cardialogue.login"
+                        required name="login">
+                    </div>
+                    <div class="form-group">
+                        <label> mot de passe </label>
+                        <input type="password" class="form-control" id="passwd" [(ngModel)]="cardialogue.passwd"
+                        required name="passwd">
+                    </div>
+                    <div class="form-group">
+                        <label> confirmé votre mot de passe </label>
+                        <input type="password" class="form-control" id="confirmePasswd" [(ngModel)]="cardialogue.confirmePasswd"
+                        required  name="confirmePasswd">
+                    </div>
+                    <div class="form-group">
+                        <label> Nom de l'hopital  </label>
+                        <input type="password" class="form-control" id="confirmePasswd" [(ngModel)]="cardialogue.nomhopital"
+                        required  name="confirmePasswd">
+                    </div>
+                    <br />
+                    <button class="btn btn-success" type="submit">S'incrire</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

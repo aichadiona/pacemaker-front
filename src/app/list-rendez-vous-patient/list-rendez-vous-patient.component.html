@@ -1,0 +1,24 @@
+<p>list-rendez-vous-patient works!</p>
+<table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Rendez-vous</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patients">
+        <td>{{ patient.nom }}</td>
+        <td>{{ patient.prenom }}</td>
+        <!-- <td>
+          <ul>
+            <li *ngFor="let rendezVous of patient.rendezVous">
+              {{ rendezVous.subject }} - {{ rendezVous.startTime }} - {{ rendezVous.endTime }}
+            </li>
+          </ul>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+  
