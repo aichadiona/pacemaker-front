@@ -13,7 +13,8 @@ export class Patient {
     dateImplantation!:Date;
     paysImplantation!:String ;
     centreImplantation!:String ;
-    
+    villeImplantation!:String ;
+
     nomOperateur!:String ;
     nomEquipe!:String ;
     indicationImplantation!:String ;
@@ -28,6 +29,7 @@ export class Patient {
 	incidendtAccident!:String ;
     stimulateurTemporel!:String ;
     rendezvous!: RendezVous[];
+compteRendu: any;
     
 }
 

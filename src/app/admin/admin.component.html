@@ -1,0 +1,22 @@
+<img src="assets/img/adm1.avif.avif" alt="" class="mp">
+   
+    <div class="container">
+        <form #loginform="ngForm" (ngSubmit)="loginUser()">
+        <small class="text-danger">{{msg}}</small>
+            <h3>Page Connexion Administrateur</h3>
+            <!-- <img src="assets/img/bk.jpeg" alt="" style="width: 10%;"> -->
+            <label for="pass">Login</label>
+            <input class="text" id="login" type="text" name="login" [(ngModel)]="admin.login" placeholder="Entrez le login" autofocus>
+            <label for="pass">Mot de Passe</label>
+            <input class="text" id="password" type="password" name="password" #passwordField  [(ngModel)]="admin.passwd" placeholder="Entrez le mot de passe" autofocus>
+            <div>
+                <input type="checkbox" (click)="passwordField.type = passwordField.type === 'text' ? 'password' : 'text'">
+                <label for="showPassword">Afficher/Masquer mot de passe</label>
+            </div>
+         <span></span>
+            <input class="connexion" type="submit" value="Connecter">
+
+        </form>
+    
+    </div>
+    

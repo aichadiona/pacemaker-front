@@ -14,20 +14,23 @@ export class CompteRenduComponent implements OnInit {
   id!: number;
   employee: Patient = new Patient();
 compteRendu: CompteRendu = new CompteRendu();
-  constructor(private employeeService: CompteRenduService,pat:PatientService,
+  constructor(private compteRenduservice: CompteRenduService,
     private route: ActivatedRoute,
     private router: Router) { }
     
 
+    
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.employeeService.getEmployeeById(this.id).subscribe(data => {
-      this.compteRendu = data;
+    console.log(this.id);
+    this.compteRenduservice.getEmployeeById(this.id).subscribe(data => {
+      this.employee = data;
+      console.log(this.employee);
     }, error => console.log(error));
   }
 
   saveEmployee(){
-    this.employeeService.createEmployee(this.compteRendu).subscribe( data =>{
+    this.compteRenduservice.createCompteRendu(this.id,this.compteRendu).subscribe( data =>{
       console.log(data);
       this.goToEmployeeList();
     },
@@ -35,7 +38,7 @@ compteRendu: CompteRendu = new CompteRendu();
   }
 
   goToEmployeeList(){
-    this.router.navigate(['/CompteRenduComponent']);
+    this.router.navigate(['/listeCompteRendu']);
   }
   
   onSubmit(){

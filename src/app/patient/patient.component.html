@@ -12,81 +12,91 @@
             <h3 class="text-center"> Information concernant le patient </h3>
             <hr />
             <div class="card-body">
-                <form (ngSubmit)="onSubmit()">
-<h4><b style="margin-left: 5%;">Compte rendu opératoire </b></h4>
-<h6><b> </b></h6>
-
-<!-- <p></p> -->
-
-                    <div class="form-group">
+                <form (ngSubmit)="onSubmit()" [formGroup]="registerFom" >
+                    <h4><b style="margin-left: 5%;">Compte rendu opératoire </b></h4>
+                    <h6><b> </b></h6>
+                        <div class="form-group">
                         <label> Nom</label>
                         <input type="text" class="form-control" id="nom" [(ngModel)]="patients.nom"
-                            name="nom" required>
+                            name="nom" [formControlName]="'nom'" [ngClass]="{'is-invalid':submitted && registerFom.controls['nom'].errors}" required>
+                            <div *ngIf="submitted && registerFom.controls['nom'].errors" class="text-danger">
+                                <div *ngIf="submitted && registerFom.controls['nom'].errors" >
+                                nom est obligatoire
+                                </div>
+                            </div>
                     </div>
+                    
 
                     <div class="form-group">
                         <label> Prenom</label>
                         <input type="text" class="form-control" id="prenom" [(ngModel)]="patients.prenom"
-                            name="prenom" required> 
-                    </div>
+                            name="prenom" [formControlName]="'prenom'" [ngClass]="{'is-invalid':submitted && registerFom.controls['prenom'].errors}" required> 
+                            <div *ngIf="submitted && registerFom.controls['prenom'].errors" class="text-danger">
+                                <div *ngIf="submitted && registerFom.controls['prenom'].errors" >
+                                prenom est obligatoire
+                                </div>
+                            </div>
+                        </div>
 
                     <div class="form-group">
                         <label> Email </label>
                         <input type="text" class="form-control" id="email" [(ngModel)]="patients.email"
-                            name="email">
+                            name="email" [formControlName]="'email'" [ngClass]="{'is-invalid':submitted && registerFom.controls['email'].errors}" required>
                     </div>
                     <div class="form-group">
                         <label> Adresse</label>
-                        <input type="text" class="form-control" id="prenom" [(ngModel)]="patients.adresse"
-                            name="adresse">
+                        <input type="text" class="form-control" id="adresse" [(ngModel)]="patients.adresse"
+                            name="adresse" [formControlName]="'adresse'" [ngClass]="{'is-invalid':submitted && registerFom.controls['adresse'].errors}" required>
                     </div>
 
                     <div class="form-group">
                         <label> téléphone </label>
                         <input type="text" class="form-control" id="numeroTelephone" [(ngModel)]="patients.numeroTelephone"
-                            name="numeroTelephone">
+                            name="numeroTelephone" [formControlName]="'numeroTelephone'" [ngClass]="{'is-invalid':submitted && registerFom.controls['numeroTelephone'].errors}">
                     </div>
                     <div class="form-group">
                         <label> age </label>
                         <input type="text" class="form-control" id="numeroTelephone" [(ngModel)]="patients.age"
-                            name="age">
+                            name="age" [formControlName]="'age'" [ngClass]="{'is-invalid':submitted && registerFom.controls['age'].errors}">
                     </div>
-                    <div class="form-group">
-                        <label> login </label>
-                        <input type="text" class="form-control" id="login" [(ngModel)]="patients.login"
-                            name="login">
-                    </div>
+                   
                     <div class="form-group">
                         <label> pays d'implantation </label>
                         <input type="text" class="form-control" id="paysImplantation" [(ngModel)]="patients.paysImplantation"
-                            name="paysImplantation">
+                            name="paysImplantation" [formControlName]="'paysImplantation'" [ngClass]="{'is-invalid':submitted && registerFom.controls['paysImplantation'].errors}" required>
                     </div>
                     <div class="form-group">
                         <label> Date d'implantation </label>
                         <input type="date" class="form-control" id="dateImplantation" [(ngModel)]="patients.dateImplantation"
-                            name="dateImplantation">
+                            name="dateImplantation" [formControlName]="'dateImplantation'" [ngClass]="{'is-invalid':submitted && registerFom.controls['dateImplantation'].errors}" required>
                     </div>
                     <div class="form-group">
                         <label> centre d'implantation </label>
                         <input type="text" class="form-control" id="centreImplantation" [(ngModel)]="patients.centreImplantation"
-                            name="centreImplantation">
+                            name="centreImplantation" [formControlName]="'centreImplantation'" [ngClass]="{'is-invalid':submitted && registerFom.controls['centreImplantation'].errors}" required>
+                    </div>
+                    <div class="form-group">
+                        <label> ville d'implantation </label>
+                        <input type="text" class="form-control" id="villeImplantation" [(ngModel)]="patients.villeImplantation"
+                            name="villeImplantation" [formControlName]="'villeImplantation'" [ngClass]="{'is-invalid':submitted && registerFom.controls['villeImplantation'].errors}" required>
                     </div>
                     <div class="form-group">
                         <label> Nom opérateur </label>
                         <input type="text" class="form-control" id="nomOperateur" [(ngModel)]="patients.nomOperateur"
-                            name="nomOperateur">
+                            name="nomOperateur" [formControlName]="'nomOperateur'" [ngClass]="{'is-invalid':submitted && registerFom.controls['nomOperateur'].errors}" required>
                     </div>
                     <div class="form-group">
-                        <label> Nom éqiupe </label>
+                        <label> Noms éqiupes </label>
                         <input type="text" class="form-control" id="nomEquipe" [(ngModel)]="patients.nomEquipe"
-                            name="nomEquipe">
+                            name="nomEquipe" [formControlName]="'nomEquipe'" [ngClass]="{'is-invalid':submitted && registerFom.controls['nomEquipe'].errors}" required>
                     </div>
                     <div class="form-group">
                         <label> Indication de l'implantation</label>
                         <input type="text" class="form-control" id="indicationImplantation" [(ngModel)]="patients.indicationImplantation"
-                            name="indicationImplantation">
+                            name="indicationImplantation" [formControlName]="'indicationImplantation'" [ngClass]="{'is-invalid':submitted && registerFom.controls['indicationImplantation'].errors}" required>
                     </div>
-                    <h6><b> </b></h6>
+                    <!-- <h6><b> </b></h6> -->
+                    <br>
                     <h4><b style="margin-left: 5%;">Technique </b></h4>
                     <h6><b> </b></h6>
                     
@@ -94,43 +104,43 @@
                     <div class="form-group">
                         <label> Préparation du malade </label>
                         <input type="text" class="form-control" id="preparationMalade" [(ngModel)]="patients.preparationMalade"
-                            name="preparationMalade">
+                            name="preparationMalade" [formControlName]="'preparationMalade'" [ngClass]="{'is-invalid':submitted && registerFom.controls['preparationMalade'].errors}" required>
                     </div>
                     <div class="form-group">
                         <label> voir d'abord </label>
                         <input type="text" class="form-control" id="voirDabord" [(ngModel)]="patients.voirDabord"
-                            name="voirDabord">
+                            name="voirDabord" [formControlName]="'voirDabord'" [ngClass]="{'is-invalid':submitted && registerFom.controls['voirDabord'].errors}" required>
                     </div>
                     <div class="form-group">
-                        <label> mise en place des ondes</label>
+                        <label> mise en place des sondes</label>
                         <input type="text" class="form-control" id="miseEnPlaceOnde" [(ngModel)]="patients.miseEnPlaceOnde"
-                            name="miseEnPlaceOnde">
+                            name="miseEnPlaceOnde" [formControlName]="'miseEnPlaceOnde'" [ngClass]="{'is-invalid':submitted && registerFom.controls['miseEnPlaceOnde'].errors}" required>
                     </div>
                     <div class="form-group">
-                        <label> mesure Paire Operatoire</label>
+                        <label> Mesure Per Operatoire</label>
                         <input type="text" class="form-control" id="mesurePaireOperatoire" [(ngModel)]="patients.mesurePaireOperatoire"
-                            name="mesurePaireOperatoire">
+                            name="mesurePaireOperatoire" [formControlName]="'mesurePaireOperatoire'" [ngClass]="{'is-invalid':submitted && registerFom.controls['mesurePaireOperatoire'].errors}" required>
                     </div>
                     <div class="form-group">
                         <label> boitier</label>
                         <input type="text" class="form-control" id="boitier" [(ngModel)]="patients.boitier"
-                            name="boitier">
+                            name="boitier" [formControlName]="'boitier'" [ngClass]="{'is-invalid':submitted && registerFom.controls['boitier'].errors}" required>
                     </div>
                     <div class="form-group">
                         <label> loge</label>
                         <input type="text" class="form-control" id="loge" [(ngModel)]="patients.loge"
-                            name="loge">
+                            name="loge" [formControlName]="'loge'" [ngClass]="{'is-invalid':submitted && registerFom.controls['loge'].errors}" required>
                     </div>
                   
                     <div class="form-group">
                         <label> incident/accident</label>
                         <input type="text" class="form-control" id="incidendtAccident" [(ngModel)]="patients.incidendtAccident"
-                            name="incidendtAccident">
+                            name="incidendtAccident" [formControlName]="'incidendtAccident'" [ngClass]="{'is-invalid':submitted && registerFom.controls['incidendtAccident'].errors}" required>
                     </div>
                     <div class="form-group">
-                        <label> stimulateurTemporel</label>
+                        <label> stimulation Temporaire</label>
                         <input type="text" class="form-control" id="stimulateurTemporel" [(ngModel)]="patients.stimulateurTemporel"
-                            name="stimulateurTemporel">
+                            name="stimulateurTemporel" [formControlName]="'stimulateurTemporel'" [ngClass]="{'is-invalid':submitted && registerFom.controls['stimulateurTemporel'].errors}" required>
                     </div>
                     <br />
 
@@ -138,7 +148,7 @@
                     <h6><b> du pacemaker</b></h6>
                     <h6><b style="margin-left: 104%;">rapport </b></h6>
                     <h6><b> opératoire</b></h6> -->
-                    <button class="btn btn-success" type="submit">Submit</button>
+                    <button class="btn btn-success" type="submit">Enregistrer</button>
                     <!-- <a href="CompteRenduComponent" class="btn btn-primary" type="submit">compte rendu</a> -->
 
 

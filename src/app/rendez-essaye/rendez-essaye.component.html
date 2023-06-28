@@ -1,0 +1,16 @@
+
+<img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 200%;">
+<div class="container">
+     <a href="GestionComponent"  style="width: 20%;text-decoration: none;color: green;"><img src="assets/img/fleche.jpeg" alt="" style="width: 10%;">
+         accueil</a>
+
+     <div>
+         <div class="row">
+ <ejs-schedule #schedule width="100%" height="500px"  [eventSettings]="eventSettings" (actionComplete)="onActionComplete($event)">
+
+ </ejs-schedule>
+ <button (click)="rendezVouslist(employee.id)" class="retour"  style="margin-bottom: 30px;margin-top: 5px;">Listes rendez-vous</button>
+ </div>
+ </div>
+
+ </div>

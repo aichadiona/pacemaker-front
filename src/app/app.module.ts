@@ -26,6 +26,34 @@ import { CreateCardiologueComponent } from './create-cardiologue/create-cardiolo
 import { CreateCalandrierComponent } from './create-calandrier/create-calandrier.component';
 import { ListRendezVousPatientComponent } from './list-rendez-vous-patient/list-rendez-vous-patient.component';
 import { LoginComponent } from './login/login.component';
+import { UtilisateurComponent } from './utilisateur/utilisateur.component';
+import { SecretaireComponent } from './secretaire/secretaire.component';
+import { ListsecretaireComponent } from './listsecretaire/listsecretaire.component';
+import { SecretaireDetailsComponent } from './secretaire-details/secretaire-details.component';
+import { SecretaireUpdateComponent } from './secretaire-update/secretaire-update.component';
+import { ListCardiologueComponent } from './list-cardiologue/list-cardiologue.component';
+import { UpdateCardiologueComponent } from './update-cardiologue/update-cardiologue.component';
+import { DetailsCardiologueComponent } from './details-cardiologue/details-cardiologue.component';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { PatientRVComponent } from './patient-rv/patient-rv.component';
+import { AdminComponent } from './admin/admin.component';
+import { ListUtilisateursComponent } from './list-utilisateurs/list-utilisateurs.component';
+import { UtilisateurDetailsComponent } from './utilisateur-details/utilisateur-details.component';
+import { UpdateUtilisateurComponent } from './update-utilisateur/update-utilisateur.component';
+import { UsersComponent } from './users/users.component';
+import { AccueilSecretaireComponent } from './accueil-secretaire/accueil-secretaire.component';
+import { SecretaireRVComponent } from './secretaire-rv/secretaire-rv.component';
+import { TypeVisiteComponent } from './type-visite/type-visite.component';
+import { RendezVousSecretaireComponent } from './rendez-vous-secretaire/rendez-vous-secretaire.component';
+import { UpdateCompteRenduComponent } from './update-compte-rendu/update-compte-rendu.component';
+import { DetailCompteRenduComponent } from './detail-compte-rendu/detail-compte-rendu.component';
+import { RendezEssayeComponent } from './rendez-essaye/rendez-essaye.component';
+import { UrgenceComponent } from './urgence/urgence.component';
+import { CardiologistDashboardComponent } from './cardiologist-dashboard/cardiologist-dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TableauDeBordComponent } from './tableau-de-bord/tableau-de-bord.component';
+import { ListeRDVComponent } from './liste-rdv/liste-rdv.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -47,6 +75,33 @@ import { LoginComponent } from './login/login.component';
     CreateCalandrierComponent,
     ListRendezVousPatientComponent,
     LoginComponent,
+    UtilisateurComponent,
+    SecretaireComponent,
+    ListsecretaireComponent,
+    SecretaireDetailsComponent,
+    SecretaireUpdateComponent,
+    ListCardiologueComponent,
+    UpdateCardiologueComponent,
+    DetailsCardiologueComponent,
+    AdministrateurComponent,
+    PatientRVComponent,
+    AdminComponent,
+    ListUtilisateursComponent,
+    UtilisateurDetailsComponent,
+    UpdateUtilisateurComponent,
+    UsersComponent,
+    AccueilSecretaireComponent,
+    SecretaireRVComponent,
+    TypeVisiteComponent,
+    RendezVousSecretaireComponent,
+    UpdateCompteRenduComponent,
+    DetailCompteRenduComponent,
+    RendezEssayeComponent,
+    UrgenceComponent,
+    CardiologistDashboardComponent,
+    DashboardComponent,
+    TableauDeBordComponent,
+    ListeRDVComponent,
     
   ],
   imports: [
@@ -55,7 +110,9 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     ScheduleModule,RecurrenceEditorModule,
     FormsModule,
-    FullCalendarModule,ModalModule.forRoot()
+    FullCalendarModule,ModalModule.forRoot(),
+    ReactiveFormsModule,
+    
     
   ],
   providers: [DayService, 
@@ -67,5 +124,10 @@ import { LoginComponent } from './login/login.component';
   bootstrap: [AppComponent]
   
 })
-export class AppModule { }
-registerLicense('Mgo+DSMBaFt/QHRqVVhlXVpHaVldX2NLfUNzT2dZdVx3ZDU7a15RRnVfQF9gSXhXcURmXHlXcQ==;Mgo+DSMBPh8sVXJ0S0J+XE9Bd1RBQmVWfFN0RnNcdVpwfldBcDwsT3RfQF5jS3xQdkNnXn5bdXxcRw==;ORg4AjUWIQA/Gnt2VVhkQlFac15JXnxPYVF2R2BJelR0dF9EZ0wxOX1dQl9gSXxRdUVlXXhfdXJVQmI=;MTE4Nzk3NkAzMjMwMmUzNDJlMzBtN1hlSkJYb2JkMXVSVmpwYUVEMW5VUE1IWFVrWTF6cHRIL3U1L2Z1cGZJPQ==;MTE4Nzk3N0AzMjMwMmUzNDJlMzBoQ0lVQ3RSNnBXeVRybHI4M1VMU3NBZUNyZGE1bHNEWDVGdzU3QlZNd0VnPQ==;NRAiBiAaIQQuGjN/V0Z+WE9EaFpDVmBWeEx0RWFab1t6cFVMYltBJAtUQF1hSn5RdEZjX3tZcXFTQWBe;MTE4Nzk3OUAzMjMwMmUzNDJlMzBCYXE2enJIb1JrcWZML2xOWktHNzM2OE1USDFnUWxNVDE4Qzl0NEZ5MkJvPQ==;MTE4Nzk4MEAzMjMwMmUzNDJlMzBiVGE5TWVjSDltRlAvOXpUelZia0pKeVNXWEJKQk9Cck9xK1BPdWQ1dlBrPQ==;Mgo+DSMBMAY9C3t2VVhkQlFac15JXnxPYVF2R2BJelR0dF9EZ0wxOX1dQl9gSXxRdUVlXXhfdXNXTmc=;MTE4Nzk4MkAzMjMwMmUzNDJlMzBWYUpRclhUQkZjdDdWTjBtSkpOSXVncDdXeHJWd2dYYkR2K2pkcEdJcWxBPQ==;MTE4Nzk4M0AzMjMwMmUzNDJlMzBWdUZmeHh1clZKcHJYdi9UcVhhb0JYMVBSUXQvUndIMnJpQWdsR3JrUENzPQ==;MTE4Nzk4NEAzMjMwMmUzNDJlMzBCYXE2enJIb1JrcWZML2xOWktHNzM2OE1USDFnUWxNVDE4Qzl0NEZ5MkJvPQ==');
+export class AppModule {
+  constructor() {
+    const licenseKey = 'Mgo+DSMBaFt+QHJqVk1mQ1dbdF9AXnNKdFZ1T2Bebz4Nf1dGYl9RQXZYQ1hmSn1bd0VhWA==;Mgo+DSMBPh8sVXJ1S0R+X1pCaVldX2NLfUN1T2ZadV13ZDU7a15RRnVfR11kSHtWdUZrWH1acQ==;ORg4AjUWIQA/Gnt2VFhiQlJPcEBEQmFJfFBmRmlcfFRzc0UmHVdTRHRcQlhjTn9Wc0ZgUX5deXU=;MTk1ODcyOUAzMjMxMmUzMjJlMzNuVGVobGY2V3Q2Yk5ZYkYrcWlVOXFTcWVqSk1aREpORWppL1FkUEZEZlhzPQ==;MTk1ODczMEAzMjMxMmUzMjJlMzNuKzBKaFZJUFYzZkE3c2lOOVFMemtGUFdsbHlxZndma0VDdFRwZzlpOUhzPQ==;NRAiBiAaIQQuGjN/V0d+Xk9HfVldW3xLflF1VWBTel16d1JWACFaRnZdQV1mSXlSc0BgWndfeXJU;MTk1ODczMkAzMjMxMmUzMjJlMzNvNk1PaElHK3lhNTRwYVZyU3d1NTcyeCsyc2dDbW01UlJhWk9jZXlPeXBNPQ==;MTk1ODczM0AzMjMxMmUzMjJlMzNqcEp4QVRnOUFCNDZjSk9MZXhBRFBlR2NhbTZ5K0U5ejNxMWFZYk5XTDM0PQ==;Mgo+DSMBMAY9C3t2VFhiQlJPcEBEQmFJfFBmRmlcfFRzc0UmHVdTRHRcQlhjTn9Wc0ZgUX1bcXU=;MTk1ODczNUAzMjMxMmUzMjJlMzNoakdrZDQ0cUpDWXl4K3RPNmRrRDdOWk1OWDZwVlNRSlhSYjMrdUlyQTIwPQ==;MTk1ODczNkAzMjMxMmUzMjJlMzNVUmgrbkpQVCsxM3ZkN0tYVy9WK1BhWmIrZ1ZVcXVpNGp3UEVablZoWFMwPQ==;MTk1ODczN0AzMjMxMmUzMjJlMzNvNk1PaElHK3lhNTRwYVZyU3d1NTcyeCsyc2dDbW01UlJhWk9jZXlPeXBNPQ==';
+    registerLicense(licenseKey);
+  }
+ }
+ registerLicense('GTIlMmhhYn1hfWBoY2V8Y2V8YWNhYHNiZmlmYGlgZGgyOjA7Mn03Ojw9NhMmMjcxfTY3Jn0gPQ==')

@@ -1,12 +1,16 @@
 
-
 <img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 150%;">
 
 <div class = "container">
 <div class = "row">
+  <!-- <marquee behavior="" direction="down" marquee-speed="fast"> <img src="assets/img/bienvenu.png" alt="" style="width: 10%;margin: 0px;height: 150%;"></marquee>  -->
+  <a href="connexion"  style="width: 20%;text-decoration: none;color: red;margin-left: 80%;"><img src="assets/img/deconnexion.png" alt="" style="width: 10%;">
+    deconnexion</a><br>
     <h1>GESTION DES PACEMAKERS</h1>
-    <a href="connexion"  style="width: 20%;text-decoration: none;color: red;margin-left: 80%;"><img src="assets/img/deconnexion.png" alt="" style="width: 10%;">
-        deconnexion</a><br>
+   
+    <p>Bienvenue, {{ nom }} {{ prenom }} !</p>
+    
+
     <!-- <a href="CreateRendezVousComponent"  class="btn btn-success" style="width: 20%;margin-left: 70%;">Create rendez-vous</a> -->
 </div>
 <!-- <div class="example">
@@ -26,14 +30,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr >
-              
+        <tr > 
             <td><a href="createpatients"  style="color: black;text-decoration: none;">
                 <div class="example">
                     <img src="assets/img/bk.jpeg" alt="tile3" width="400" height="300" alt="house" />
                        <div class="fadedbox">
                         <div class="title text">  Nouvelle implantation </div>
-
                            <!-- <a href="patients"  style="color: black;text-decoration: none;"><div class="title text">  Nouvelle implantation </div></a> -->
                        </div>
                 </div>
@@ -45,17 +47,25 @@
                     <img src="assets/img/rrv.webp" alt="tile3" width="400" height="300" alt="house" />
                        <div class="fadedbox">
                         <div class="title text">  listes des implantations</div>
-
-                           <!-- <a href="listRendezVousComponent" style="color: black;text-decoration: none;"><div class="title text">  listes des implantations</div></a> -->
+                         <!-- <a href="listRendezVousComponent" style="color: black;text-decoration: none;"><div class="title text">  listes des implantations</div></a> -->
                        </div>
                      </div>
                     </a>
             </td>
-            <td><a href="calendrier"  style="color: black;text-decoration: none;">
+            <!-- <td *ngFor="let cardio of cardiologues "><button (click)="rendezVouscardio(cardio)" style="color: black;text-decoration: none;">
                 <div class="example">
                     <img src="assets/img/CR.jpeg" alt="tile3" width="400" height="300" alt="house" />
                        <div class="fadedbox">
                            <div class="title text">  Gestion des rendez-vous    </div>
+                       </div>
+                     </div>
+                    </button>
+            </td> -->
+            <td><a href="creationRV" style="color: black;text-decoration: none;">
+                <div class="example">
+                    <img src="assets/img/CR.jpeg" alt="tile3" width="400" height="300" alt="house" />
+                       <div class="fadedbox">
+                           <div class="title text">  Gestion des rendez-vous  </div>
                        </div>
                      </div>
                     </a>
@@ -63,4 +73,5 @@
         </tr>
     </tbody>
 </table> 
-</div>
+<a href="tableau" class="retour">voir les statistiques</a>
+</div>  

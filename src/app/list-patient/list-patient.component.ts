@@ -12,12 +12,18 @@ export class ListPatientComponent implements OnInit {
 
   patients: Patient[] = [];
   prenom!:string;
+  numberOfPatients!: number;
   constructor(private employeeService: PatientService,
     private router: Router) { }
 
   ngOnInit(): void {
     this.getEmployees();
+
+    this.employeeService.getNumberOfPatients().subscribe(count => {
+      this.numberOfPatients = count;
+    });
   }
+  
 
   private getEmployees(){
     this.employeeService.getEmployeesList().subscribe(data => {

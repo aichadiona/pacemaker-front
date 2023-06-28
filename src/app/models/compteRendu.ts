@@ -12,6 +12,8 @@ export class CompteRendu {
     erduree!: number;
     impedanceauricullaire!: string;
     impedanceventriculaire!: string;
+    sondeSC!: string;
+    seuilSc!: string;
     seuilstimulationventriculaire!: string;
     seuilstimulationauricullaire!: string;
     seuildetectionventriculaire!: string;
@@ -19,5 +21,8 @@ export class CompteRendu {
 	pourcentagestimulationventriculaire!: number;
     pourcentagestimulationauriculaire!: number;
     evenement!:string;
-	
+    id_patient!:number;
+    autres!:string;
+    impedancedefilullation!:string;
+    duree!:string;
 }

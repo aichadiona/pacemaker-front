@@ -10,7 +10,7 @@ import { Cardiologue } from '../models/cardiologue';
   styleUrls: ['./create-cardiologue.component.css']
 })
 export class CreateCardiologueComponent implements OnInit {
-
+  userType = "cardiologue"
   cardialogue: Cardiologue = new Cardiologue();
   constructor(private cardiologueService: CardialogueService,
     private router: Router) { }
@@ -25,11 +25,12 @@ export class CreateCardiologueComponent implements OnInit {
       console.log(data);
       console.log("respone received")
       this.goToCardiologueList();
+      this.msg="enregistrement cardiologue reussi"
     },
     
     error => console.log(error));
     console.log("exception received")
-    this.msg="le login que vous avez saisie existe déja"
+    this.msg=""
     this.router.navigate(['/cardiologue']);
     // this.message="votre prenom svp"
   }
@@ -37,7 +38,7 @@ export class CreateCardiologueComponent implements OnInit {
 
 
   goToCardiologueList(){
-    this.router.navigate(['/connexion']);
+    this.router.navigate(['/listeCardiologue']);
   }
   
   onSubmit(){

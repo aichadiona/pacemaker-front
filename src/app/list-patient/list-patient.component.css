@@ -18,6 +18,26 @@
     align-items: center;
     justify-content: space-around;
 }
+.search-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+  }
+  
+  .search-input {
+    padding-left: 30px; /* Ajustez cette valeur selon la taille de l'image */
+  }
+  
+
 .b1{
     color: rgb(0, 0, 0);
     text-align: center;
@@ -114,7 +134,7 @@ input{
 
 .table .tr:nth-child(even) {
     background-color: rgb(192, 231, 207);
-    color: #fff;
+    color: #000000;
     font-size: 17px;
     border: 2px solid black;
 }

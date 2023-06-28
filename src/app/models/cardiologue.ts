@@ -9,5 +9,10 @@ export class Cardiologue {
     passwd!: string;
 	confirmePasswd!: string;
     nomhopital!:string;
+    profil!:string;
+    identification!:string;
+    role!:string;
+    userType!:string;
+    pays!:string;
 	
 }

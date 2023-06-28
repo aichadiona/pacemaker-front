@@ -9,9 +9,17 @@
         <div>
             <div class="row">
         
-                <ejs-schedule #schedule width="100%" height="500px"  #ejCalendar [eventSettings]='{ dataSource: calendarEvents, fields: eventFields }'>
+                <ejs-schedule #schedule width="100%" height="400px"  #ejCalendar [eventSettings]='{ dataSource: calendarEvents, fields: eventFields }'>
                 </ejs-schedule>
                   <form (ngSubmit)="addEvent()" style="margin-bottom: 50px;">
+                    <!-- <input type="text" id="subject" name="id_patient" [(ngModel)]="newEvent.id_patient">
+                    <input type="text" id="subject" name="id_cardialogue" [(ngModel)]="newEvent.id"> -->
+                    
+                    <input type="text" id="id_cardiologue" name="id_cardiologue" [(ngModel)]="cardiologueId" >
+                    <input type="text" id="id_patient" name="id_patient" [(ngModel)]="employee.id" >
+                    <input type="text" id="nom" name="nom" [(ngModel)]="employee.nom">
+                    <input type="text" id="prenom" name="prenom" [(ngModel)]="employee.prenom" >
+                    <!-- <input type="text" id="id_secretaire" name="id_secretaire" [(ngModel)]="newEvent.id_secretaire" > -->
                     <div>
                       <label for="subject">Subject:</label>
                       <input type="text" id="subject" name="subject" [(ngModel)]="newEvent.subject">
@@ -28,8 +36,16 @@
                       <label for="end-time">End Time:</label>
                       <input type="datetime-local" id="end-time" name="endTime" [(ngModel)]="newEvent.endTime">
                     </div>
-                    <button type="submit" class="btn btn-success" style="margin-bottom: 60px;">Add Event</button>
+                    <div>
+                      <label for="end-time">Heur rendez-vous</label>
+                      <input type="time" id="heurRDV" name="heurRDV" [(ngModel)]="newEvent.heurRDV">
+                    </div>
+                    
+                    <button type="submit" class="valide"  style="margin-bottom: 60px;">Ajouter rendez vous</button>
+                    <!-- <a href="listeRendezVous" class="retour"  style="margin-bottom: 60px;"></a> -->
+                    <button (click)="rendezVouslist(employee.id)" class="retour"  style="margin-bottom: 60px;">Listes rendez-vous</button>
                   </form>
+                  
             </div>
         </div>
     </div>

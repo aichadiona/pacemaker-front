@@ -1,0 +1,57 @@
+<!-- <p>secretaire-update works!</p> -->
+<img src="assets/img/font.jpeg" alt="" style="width: 100%;">
+<div class="container">
+<div class="row">
+    <!-- <div class="card col-md-6 offset-md-3 offset-md-3"> -->
+        <div class="row">
+            <a href="listeCompteRendu"  style="width: 20%;text-decoration: none;color: green;"><img src="assets/img/fleche.jpeg" alt="" style="width: 10%;">
+                retour</a><br>
+            <h3 class="text-center"> Update compte rendu</h3>
+            <hr />
+            <div class="card-body">
+                <form (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label> nom</label>
+                        <input type="text" class="form-control" id="firstName" [(ngModel)]="compteRendu.nom"
+                            name="nom">
+                    </div>
+
+                    <div class="form-group">
+                        <label> prenom</label>
+                        <input type="text" class="form-control" id="lastName" [(ngModel)]="compteRendu.prenom"
+                            name="prenom">
+                    </div>
+
+                    <div class="form-group">
+                        <label> Age </label>
+                        <input type="text" class="form-control" id="emailId" [(ngModel)]="compteRendu.age"
+                            name="age">
+                    </div>
+                    <div class="form-group">
+                        <label> Constantes</label>
+                        <input type="text" class="form-control" id="age" [(ngModel)]="compteRendu.constantes"
+                            name="constantes">
+                    </div>
+                    <div class="form-group">
+                        <label> Marque de stimulateur </label>
+                        <input type="text" class="form-control" id="passwd" [(ngModel)]="compteRendu.marquestimulateur"
+                            name="marquestimulateur">
+                    </div>
+                    <div class="form-group">
+                        <label> Mode de stimulateur </label>
+                        <input type="text" class="form-control" id="numeroTelephone" [(ngModel)]="compteRendu.modedestimulateur"
+                            name="modedestimulateur">
+                    </div>
+                 
+                    <div class="form-group">
+                        
+                    </div>
+                    <br />
+                    <button class="btn btn-success" type="submit">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,29 +3,55 @@
     <div class="container">
         <form #loginform="ngForm" (ngSubmit)="loginUser()">
         <small class="text-danger">{{msg}}</small>
+
             <h1>C.H.U.ARTISDE LE DANTEC</h1>
             <img src="assets/img/bk.jpeg" alt="" style="width: 10%;">
-            <!-- <h2>Connexion</h2> -->
-            <!-- <input type="hidden" name="hash" value="$2y$10$Qo0$QoUVqRNPUANSBIZjIaShxuObQEFfY5h3ZvBpEG6PwAUVqRNPUANSBIZjIaShxuObQEFfY5h3ZvBpEG6PwA0$QoUVqRNPUANSBIZjIaShxuObQEFfY5h3ZvBpEG6PwAURd7sxc.X9K"> -->
-            <!-- @if ($error == 1) -->
-            <!-- <span class="enregistrement-reusie" style="font-weight: bold;color: darkred;">Le mot de passe est incorrect</span> -->
-            <!-- @endif
-            @if ($smspass == 2) -->
-            <!-- <span class="enregistrement-reusie" style="font-weight: bold;color: darkgreen;">Votre mot de passe a été modifier avec succes</span> -->
-            <!-- @endif -->
-            <label for="pass">Login</label>
-            <input class="text" id="login" type="text" name="login" [(ngModel)]="cardio.login" placeholder="Entrez le login" autofocus>
+       <label for="pass">Login</label>
+            <input class="text"  id="username" [(ngModel)]="username"  type="text" name="username"  placeholder="Entrez le login" autofocus>
             <label for="pass">Mot de Passe</label>
-            <input class="text" id="pass" type="password" name="passwd" [(ngModel)]="cardio.passwd" placeholder="Entrez le mot de passe" autofocus>
+            <input class="text"  id="password" [(ngModel)]="password" type="password" name="password" #passwordField  placeholder="Entrez le mot de passe" autofocus>
             <div>
-                <input type="checkbox" id="visible" onclick="showHide()">
-                <label style="font-size: 13px" for="visible">Afficher/Masquer mot de passe</label>
+                <label>
+                  <input type="radio" name="userType" [(ngModel)]="userType" value="cardiologue">
+                  Cardiologue
+                </label>
+                <label>
+                  <input type="radio" name="userType" [(ngModel)]="userType" value="secretaire">
+                  Secrétaire
+                </label>
+              </div>
+              <div>
+                <input type="checkbox" (click)="passwordField.type = passwordField.type === 'text' ? 'password' : 'text'">
+                <label for="showPassword">Afficher/Masquer mot de passe</label>
             </div>
-        
-            <input class="connexion" type="submit" value="Connecter">
-            
+            <button (click)="login()" class="connexion">Se connecter</button>  
             <a href="">Modifier votre mot de passe</a>
         </form>
     
     </div>
-    
+
+<!-- 
+    <div class="login-container">
+      <h1>Connectez-vous</h1>
+      <div *ngIf="error" class="error">{{ error }}</div>
+      <div>
+        <label>Type d'utilisateur :</label>
+        <label>
+          <input type="radio" name="userType" [(ngModel)]="userType" value="cardiologue">
+          Cardiologue
+        </label>
+        <label>
+          <input type="radio" name="userType" [(ngModel)]="userType" value="secretaire">
+          Secrétaire
+        </label>
+      </div>
+      <div>
+        <label for="username">Nom d'utilisateur :</label>
+        <input type="text" id="username" [(ngModel)]="username">
+      </div>
+      <div>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" [(ngModel)]="password">
+      </div>
+      <button (click)="login()">Se connecter</button>
+    </div> -->

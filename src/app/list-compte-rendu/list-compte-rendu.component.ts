@@ -14,27 +14,27 @@ export class ListCompteRenduComponent implements OnInit{
     private router: Router) { }
   
   ngOnInit(): void {
-    this.getEmployees();
+    this.getAllCompteRendu();
   }
   
-  private getEmployees(){
-    this.employeeService.getEmployeesList().subscribe(data => {
+  private getAllCompteRendu(){
+    this.employeeService.getAllCompteRendu().subscribe(data => {
       this.comptes = data;
     });
   }
   
   compteDetails(id: number){
-    this.router.navigate(['patient-details', id]);
+    this.router.navigate(['detailsCompteRendu', id]);
   }
   
   updateCompte(id: number){
-    this.router.navigate(['update-patient', id]);
+    this.router.navigate(['updateCompte', id]);
   }
   
   deleteCompte(id: number){
-    this.employeeService.deleteEmployee(id).subscribe( data => {
+    this.employeeService.deleteCompte(id).subscribe( data => {
       console.log(data);
-      this.getEmployees();
+      this.getAllCompteRendu();
     })
   }
   rendezVous(){

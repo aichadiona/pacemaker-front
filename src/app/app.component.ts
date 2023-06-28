@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pacemaker';
+  password: string = '';
+  passwordFieldType: string = 'password';
+
+  @ViewChild('passwordField') passwordField!: ElementRef;
+
+  togglePassword() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+    this.passwordField.nativeElement.focus();
+  }
 }

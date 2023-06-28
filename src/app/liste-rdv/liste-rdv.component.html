@@ -1,0 +1,82 @@
+<img src="assets/img/font.jpeg" alt="" style="width: 100%;margin: 0px;height: 150%;">
+<div class="box">
+    <div class="b1 b4 b7">
+        <!-- <h2>Rechercher un ouvrages - <mark>{{ $nbLivres ?? $livres->count() }} Ouvrages</mark> <span style="color: {{ $color??'' }}">{{ $sms ?? '' }}</span></h2> -->
+        <a href="creationRV" style="width: 20%;height: 10px;text-decoration: none;color: green;"><img
+                src="assets/img/fleche.jpeg" alt="" style="width: 10%;">
+            retour</a><br>
+      
+            <h2> listes des rendez-vous</h2>
+         
+
+        
+    </div>
+    <div class="b5 b6">
+        <h3 *ngIf="prenom && nom">{{ prenom }} {{ nom }}</h3>
+        <table class="table ">
+            <tr class="header">
+                <td style="text-align: center;"> subject</td>
+                <td style="text-align: center;"> description</td>
+                <td style="text-align: center;"> startTime </td>
+                <td style="text-align: center;"> endTime</td>
+                <td style="text-align: center;"> heurRDV </td>
+                
+                <td style="text-align: center;"> Actions </td>
+            </tr>
+           
+            <tr class="tr" *ngFor="let cardialogue of cardiologues ">
+                <td> {{ cardialogue.subject }} </td>
+                <td> {{ cardialogue.description }} </td>
+                <td> {{ cardialogue.startTime }} </td>
+                <td> {{ cardialogue.endTime }} </td>
+                <td> {{ cardialogue.heurRDV }} </td>
+                <td>
+              
+                    <button (click)="deleteCardiologue(cardialogue.id)" class="btn btn-danger"
+                        style="color: black;;margin-left: 10px;"> <img src="assets/img/supprimer.png"
+                            class="svg"></button>
+
+                </td>
+                
+            </tr>
+           
+        </table>
+
+        <!-- <div class="b5 b6">
+       <table class="table table-striped table-bordered">
+           <thead>
+               <tr class="header">
+                   <th> Nom</th>
+                   <th> Prenom </th>
+                   <th> email</th>
+                   <th> adresse</th>
+                   <th> téléphone </th>
+                   <th> age</th>
+                   <th> login</th>
+                   <th> Actions </th>
+               </tr>
+           </thead>
+           <tbody>
+               <tr *ngFor="let patient of patients ">
+                   <td> {{ patient.nom }} </td>
+                   <td> {{ patient.prenom }} </td>
+                   <td> {{ patient.email }} </td>
+                   <td> {{ patient.adresse }} </td>
+                   <td> {{ patient.numeroTelephone }} </td>
+                   <td> {{ patient.age }} </td>
+                   <td> {{ patient.login }} </td>
+                   <td>
+                       <button (click)="updatePatient(patient.id)" class="btn btn-primary"> Update</button>
+                       <button (click)="deleteEmployee(patient.id)" class="btn btn-danger"> Delete</button>
+                       <button (click)="patientDetails(patient.id)" class="btn btn-primary"> View</button>
+                       <button (click)="compteRendus(patient.id)" class="btn btn-success"> compte Rendu</button>
+
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+   <a href="CompteRenduComponent" style="width: 40%;margin-bottom: 2%;" class="btn btn-success" type="submit">compte
+       rendu</a> -->
+
+        <!-- </div> -->

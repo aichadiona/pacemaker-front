@@ -1,4 +1,8 @@
+import { Time } from "@angular/common";
+import { Cardiologue } from "./cardiologue";
+import { CompteRendu } from "./compteRendu";
 import { Patient } from "./patient";
+import { Secretaire } from "./secretaire";
 
 export class RendezVous {
     id!: number;
@@ -6,19 +10,16 @@ export class RendezVous {
     description!: string;
     startTime!: Date;
     endTime!: Date;
-    patients!: Patient[];
-}
-// @ManyToOne
-// @JsonIgnore
-// private Patient patient;
+    heurRDV!:Time;
+    id_patient!:number;
+    id_cardiologue!:number;
+    id_secretaire!:number;
+    patients!: Patient;
+    cardiologue!:Cardiologue;
+  
+    secretaire!:Secretaire;
 
-// @ManyToOne
-// @JsonIgnore
-// private Cardialogue cardialogue;
-// @ManyToOne
-// @JsonIgnore
-// private Secretaire secretaire;
-// @JsonBackReference
-// @OneToOne
-// private CompteRendu compteRendu;
+
+
+}
 

@@ -22,7 +22,7 @@ export class PatientUpdateComponent implements OnInit {
     this.employeeService.getEmployeeById(this.id).subscribe(data => {
       this.employee = data;
     }, error => console.log(error));
-  }
+  } 
 
   onSubmit(){
     this.employeeService.updateEmployee(this.id, this.employee).subscribe( data =>{

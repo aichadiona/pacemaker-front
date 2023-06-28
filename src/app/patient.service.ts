@@ -9,17 +9,30 @@ import { Patient } from './models/patient';
 export class PatientService {
   [x: string]: any;
   private baseURL = "http://localhost:8082/api/v1/patients";
+  private apiUrl = "http://localhost:8082/api/v1/patients/countries";
+  private apiUrl1= "http://localhost:8082/api/v1/";
+  private baseUrL = "http://localhost:8082/api/v1/patientss";
   
-  private baseUrl = "http://localhost:8082/api/v1/patient";
-  constructor(private httpClient: HttpClient) { }
+  
+  constructor(private httpClient: HttpClient,) { }
 
-  getPatient(): Observable<Patient[]> {
-    return this.httpClient.get<Patient[]>(`${this.baseUrl}`);
+  getCountriesOfImplantation(): Observable<string[]> {
+    return this.httpClient.get<string[]>(this.apiUrl);
   }
+  
+  getPatientCountsByCountry() {
+    return this.httpClient.get<number[]>(`${this.apiUrl1}/patients/count-by-country`);
+  }
+getNumberOfPatients(): Observable<number> {
+return this.httpClient.get<number>(`${this.baseURL}/count`);
+}
 
-  getPatients(): Observable<Patient[]> {
-    return this.httpClient.get<Patient[]>(`${this.baseURL}/all`);
+
+  getAllPatient(): Observable<Patient[]> {
+    return this.httpClient.get<Patient[]>(`${this.baseUrL}`);
   }
+  
+  
   getEmployeesList(): Observable<Patient[]>{
     return this.httpClient.get<Patient[]>(`${this.baseURL}`);
   }
@@ -34,6 +47,10 @@ export class PatientService {
 
   updateEmployee(id: number, employee: Patient): Observable<Object>{
     return this.httpClient.put(`${this.baseURL}/${id}`, employee);
+  }
+
+  rendezVous(id:number,patient:Patient): Observable<Object>{
+    return this.httpClient.put(`${this.baseURL}/${id}`, patient);
   }
 
   deleteEmployee(id: number): Observable<Object>{
