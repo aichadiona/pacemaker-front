@@ -6,7 +6,6 @@ import * as L from 'leaflet';
 import { LatLngExpression } from 'leaflet';
 
 
-
 @Component({
   selector: 'app-tableau-de-bord',
   templateUrl: './tableau-de-bord.component.html',
@@ -17,6 +16,15 @@ export class TableauDeBordComponent implements OnInit {
   countries: string[] = [];
   patientCounts: number[] = [];
   map: any;
+  patientData!: any[];
+  
+  // heartIcon= faHeartbeat;
+
+  colorScheme = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+  };
+
+  gradient = false;
 
   constructor(private patientService: PatientService) { }
 
@@ -33,10 +41,12 @@ export class TableauDeBordComponent implements OnInit {
     this.patientService.getNumberOfPatients().subscribe(count => {
       this.numberOfPatients = count;
     });
+    
+    
   }
 
 createMap(){
-  this.map = L.map('map').setView([0, 20], 2);
+  this.map = L.map('map').setView([5, 15], 3);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
@@ -45,8 +55,8 @@ createMap(){
 
   // Utilisez les coordonnées pour centrer la carte sur l'Afrique
   this.map.fitBounds([
-    [-40, -40], // Coin sud-ouest de l'Afrique
-    [40, 60]    // Coin nord-est de l'Afrique
+    [20, -20], // Coin sud-ouest de l'Afrique du Nord
+    [40, 40]   // Coin nord-est de l'Afrique du Nord
   ]);
 
  
@@ -67,13 +77,14 @@ createMap(){
 
 createMarkerIcon(color: string): L.Icon {
   return L.icon({
-    iconUrl: `assets/marker-icon-${color}.png`, // Chemin vers l'icône personnalisée (assurez-vous d'avoir les icônes correspondantes)
+    iconUrl: 'assets/img/marker-icon.png',
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
   });
 }
+
 getCoordinatesByCountry(country: string): LatLngExpression | null {
   switch (country) {
     case 'France':
@@ -82,6 +93,12 @@ getCoordinatesByCountry(country: string): LatLngExpression | null {
       return [37.09024, -95.712891];
     case 'Australia':
       return [-25.274398, 133.775136];
+    case 'Canada':
+      return [56.130366, -106.346771];
+    case 'South Africa':
+      return [-30.559482, 22.937506];
+    case 'Brazil':
+      return [-14.235004, -51.92528];
     // Ajoutez des cas pour les autres pays
     default:
       return null;

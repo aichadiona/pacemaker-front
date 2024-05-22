@@ -54,6 +54,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TableauDeBordComponent } from './tableau-de-bord/tableau-de-bord.component';
 import { ListeRDVComponent } from './liste-rdv/liste-rdv.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -112,7 +113,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     FullCalendarModule,ModalModule.forRoot(),
     ReactiveFormsModule,
-    
+    NgxChartsModule
     
   ],
   providers: [DayService, 
